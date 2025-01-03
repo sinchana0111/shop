@@ -20,7 +20,7 @@ Follow the steps below to set up the project on your local machine:
 
 1️⃣ Clone the Repository
 bash
-git clone https://github.com/yourusername/ecommerce-project.git
+git clone https://github.com/sinchana0111/shop-project.git
 cd ecommerce-project
 2️⃣ Create a Virtual Environment
 bash
