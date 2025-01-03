@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Product Details{% endblock %}
+
+{% block content %}
+
+<h1>Product Details</h1>
+
+<h2>{{ product_name }}</h2>
+<p>{{ product_description }}</p>
+
+{% for detail in product_details %}
+    <h3>Product Variation</h3>
+    <p><strong>Original Price:</strong> ₹{{ detail.original_price }}</p>
+    {% if detail.sale_price %}
+        <p><strong>Sale Price:</strong> ₹{{ detail.sale_price }}</p>
+    {% endif %}
+
+    <h4>Images:</h4>
+    {% if detail.images %}
+        {% for image in detail.images %}
+            <img src="{{ image.url }}" alt="Product Image" width="150">
+        {% endfor %}
+    {% else %}
+        <p>No images available.</p>
+    {% endif %}
+
+    <h4>Sizes and Stock:</h4>
+    <table border="1">
+        <tr>
+            <th>Size</th>
+            <th>Stock</th>
+        </tr>
+        {% for size_stock in detail.sizes_and_stock %}
+        <tr>
+            <td>{{ size_stock.size_name }}</td>
+            <td>{{ size_stock.stock }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <hr>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+            margin-top: 100px;
+            color: palevioletred;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 80px;
+        }
+        button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            margin-top: 60px;
+            left: 600px;
+        }
+        div{
+            position: relative;
+        }
+    </style>
+    <div>
+    <h1>Welcome {{request.user}}</h1>
+    <a href="{% url 'signout' %}"><button>Logout</button></a>
+    </div>
+{% endblock %}

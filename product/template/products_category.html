@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Products{% endblock %}
+{% block content %}
+    <h1>Product List</h1>
+    <table border="1">
+        <tbody>
+            {% for product in products %}
+            
+            <div>
+                    <!-- <img src="{{product.image1.url}}" width="200px" height="200px" alt=""><br> -->
+                <a href="{% url 'product_view' product.slug %}"><img src="{{product.image1.url}}" width="200px" height="200px">
+                
+                <p>{{product.product.product_name}}</p></a>
+                <p>Colour{{product.colour.colour_name}}</p>
+                <p>Original_price{{ product.original_price}}</p>
+                <p>Sale_price{{product.sale_price}}</p>
+                
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

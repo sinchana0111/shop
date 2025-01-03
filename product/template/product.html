@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Product List{% endblock %}
+{% block content %}
+    <h1>Product List</h1>
+    <table border="1">
+        <tbody>
+            
+            
+            <div>
+                    <img src="{{product.image1.url}}" width="200px" height="200px" alt=""><br>
+                
+                <p>{{product.product.product_name}}</p>
+                <p>Colour{{product.colour.colour_name}}</p>
+                <p>Original_price{{ product.original_price}}</p>
+                <p>Sale_price{{product.sale_price}}</p>
+                
+            </div>
+           
+        </tbody>
+    </table>
+{% endblock %}
